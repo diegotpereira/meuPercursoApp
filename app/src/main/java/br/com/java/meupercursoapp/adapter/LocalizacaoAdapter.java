@@ -12,11 +12,13 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 
 import br.com.java.meupercursoapp.R;
+import br.com.java.meupercursoapp.RouteLocationsActivity;
 import br.com.java.meupercursoapp.model.Cliente;
 
 public class LocalizacaoAdapter extends RecyclerView.Adapter<LocalizacaoAdapter.ViewHolder> {
 
     private ArrayList<Cliente> data;
+    private RouteLocationsActivity parentActivity;
 
     public ArrayList<Cliente> getData() {
         return data;
@@ -44,8 +46,9 @@ public class LocalizacaoAdapter extends RecyclerView.Adapter<LocalizacaoAdapter.
         }
     }
 
-    public LocalizacaoAdapter(ArrayList<Cliente> data) {
+    public LocalizacaoAdapter(ArrayList<Cliente> data, RouteLocationsActivity _parentActivity) {
         this.data = data;
+        this.parentActivity = _parentActivity;
     }
 
     @NonNull
@@ -65,6 +68,7 @@ public class LocalizacaoAdapter extends RecyclerView.Adapter<LocalizacaoAdapter.
             public void onClick(View view) {
                 data.remove(position);
                 notifyDataSetChanged();
+                parentActivity.definirClientesParaVisitar(data);
 
             }
         });

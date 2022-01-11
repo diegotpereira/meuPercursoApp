@@ -156,7 +156,7 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
         actionBar.setHomeAsUpIndicator(R.drawable.ic_menu_black_24dp);
-        setTitle("MyWay");
+        setTitle("Meu Caminho");
     }
 
     @Override
@@ -279,7 +279,7 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         }
         if (!opcoes.isInciarAtual() && iniciar.length() < 2 || !opcoes.isPararAtual() && parar.length() < 2) {
 
-            Toast.makeText(this, "O endereço fornecido não é suficientemente preciso!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "O endereço fornecido não é suficientemente preciso!", Toast.LENGTH_LONG).show();
 
             return;
         }
@@ -381,7 +381,7 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
                     }
                 }
             }
-        } catch (InvalidRequestException ex) {
+        } catch (com.google.maps.errors.InvalidRequestException ex) {
 
             Toast.makeText(this, ex.getMessage(), Toast.LENGTH_LONG).show();
         } catch (Exception ex) {
