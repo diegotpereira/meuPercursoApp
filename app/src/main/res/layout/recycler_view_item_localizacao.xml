@@ -6,29 +6,33 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
-
-    <Button
-        android:id="@+id/btnCliente"
-        android:layout_width="296dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
+    <TextView
+        android:id="@+id/txtLocalizacao"
+        android:layout_width="298dp"
+        android:layout_height="31dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
-        android:onClick="onBtnClienteClicar"
-        app:layout_constraintEnd_toStartOf="@+id/btnRemoveDoDb"
+        android:ellipsize="end"
+        android:gravity="center_vertical|clip_horizontal"
+        android:maxLines="1"
+        android:text="Testowa lokalizacjaaaaaaaaaaaaaaaaa"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toStartOf="@+id/btnDeletar"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/btnRemoveDoDb"
-        android:layout_width="43dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:id="@+id/btnDeletar"
+        android:layout_width="41dp"
+        android:layout_height="43dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:text="–"
+        android:onClick="onButtonRemoveLocationClick"
+        android:textAllCaps="false"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
