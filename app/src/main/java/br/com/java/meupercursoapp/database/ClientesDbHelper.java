@@ -37,7 +37,7 @@ public class ClientesDbHelper extends SQLiteOpenHelper {
 
     private static ClientesDbHelper dbHelper = null;
 
-    private static ClientesDbHelper initDbHelper(Context context) {
+    public static ClientesDbHelper initDbHelper(Context context) {
         dbHelper = new ClientesDbHelper(context);
 
         return dbHelper;
