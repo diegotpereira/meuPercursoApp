@@ -22,7 +22,7 @@ public class OptionsActivity extends AppCompatActivity {
 
     private Opcoes opcoes;
 
-    public static final String OPTIONS_ID = "br.com.java.meupercursoapp.model.OPCOES";
+    public static final String OPTIONS_ID = "br.com.java.OPCOES";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -71,14 +71,14 @@ public class OptionsActivity extends AppCompatActivity {
         });
         switchStartCurrent.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
-            public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 opcoes.setInciarAtual(isChecked);
                 atualizarOpcoes();
             }
         });
         switchStopCurrent.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
-            public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 opcoes.setPararAtual(isChecked);
                 atualizarOpcoes();
             }

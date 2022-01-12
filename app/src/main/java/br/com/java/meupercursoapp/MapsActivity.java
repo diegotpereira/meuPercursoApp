@@ -80,10 +80,10 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
 
     public static final int LOCATIONS_REQUEST = 2;
     public static final int OPTIONS_REQUEST = 3;
-    private String[] RotaEnderecos = new String[]{"teste 1", "teste 2", "teste 3", "teste 4"};
+    private String[] RotaEnderecos = new String[] {"Aleje Jerozolimskie", "Obozowa Warszawa", "Koszykowa Warszawa", "Stadion Narodowy"};
     public String IniciarEndereco = null;
     public String PararEndereco = null;
-    private ActivityMapsBinding binding;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -141,10 +141,10 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
                         a(item.getTitle().toString());
 
                         // CLIQUES DOS ITENS DO MENU
-                        if (item.getTitle().toString().contains("Cliente Lista")) {
+                        if (item.getTitle().toString().contains("Client list")) {
                             AlternarAtividadeLocaisRota();
                         }
-                        if (item.getTitle().toString().contains("Opções")) {
+                        if (item.getTitle().toString().contains("Opcoes")) {
                             MudarParaOpcoes();
                         }
                         return true;
@@ -236,7 +236,7 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         } catch (Exception e) {
             Toast.makeText(this, e.toString(), Toast.LENGTH_SHORT).show();
         }
-    }
+        }
 
     public void ExibirRotaMaisCurta() {
         //Verificando se as opções estão corretas

@@ -16,7 +16,7 @@ import br.com.java.meupercursoapp.model.Cliente;
 
 public class RouteLocationsActivity extends AppCompatActivity {
 
-    public static final String LIST_ID = "br.com.java.meupercursoapp.CLIENTS_TO_VISIT";
+    public static final String LIST_ID = "br.com.java.CLIENTS_TO_VISIT";
     private static final int ADD_LOCATION_REQUEST = 1;
 
     private ArrayList<Cliente> clientesParaVisitar;

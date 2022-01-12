@@ -22,7 +22,7 @@ public class ClientesDbHelper extends SQLiteOpenHelper {
         public static final String COLUNA_NOME_TELEFONE = "Telefone";
     }
 
-    public static final int DATABASE_VERSAO = 1;
+    public static final int DATABASE_VERSION = 1;
     public static final  String DATABASE_NOME = "clientes.db";
 
     private static final String SQL_CRIAR_ENTRADAS =
@@ -44,7 +44,7 @@ public class ClientesDbHelper extends SQLiteOpenHelper {
     }
 
     public ClientesDbHelper(Context context) {
-        super(context, DATABASE_NOME, null, DATABASE_VERSAO);
+        super(context, DATABASE_NOME, null, DATABASE_VERSION);
     }
 
     @Override
@@ -53,7 +53,7 @@ public class ClientesDbHelper extends SQLiteOpenHelper {
     }
 
     @Override
-    public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
+    public void onUpgrade(SQLiteDatabase sqLiteDatabase, int oldVersion, int newVersion) {
         sqLiteDatabase.execSQL(SQL_DELETE_ENTRADAS);
         onCreate(sqLiteDatabase);
     }
@@ -93,9 +93,10 @@ public class ClientesDbHelper extends SQLiteOpenHelper {
                 ClienteEntrada.COLUNA_NOME_TELEFONE
         };
 
-        String ordemClassificacao = ClienteEntrada._ID + "ASC";
+        String ordemClassificacao = ClienteEntrada._ID + " ASC";
 
         Cursor cursor = db.query(ClienteEntrada.TABELA_NOME, projecao, null, null, null, null, ordemClassificacao);
+
 
         ArrayList<Cliente> clientes = new ArrayList<>();
 
